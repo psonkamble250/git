@@ -11,6 +11,7 @@ class Engine
     Engine(int);
     Engine(int,string);
     virtual void display();
+	System.out.println("single inheritence");
 };
 Engine::Engine()
 {
