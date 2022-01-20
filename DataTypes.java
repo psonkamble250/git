@@ -31,7 +31,7 @@ public class DataTypes {
 		float q=12.5f;
 		System.out.println((q==12.5));//never do this
 		System.out.println((x<y));
-		
+		System.out.println("hello");
 
 	}
 
