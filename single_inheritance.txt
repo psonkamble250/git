@@ -1,0 +1,79 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+class Engine
+{
+    private:
+    int eng_no;
+    string name;
+    public:
+    Engine();
+    Engine(int);
+    Engine(int,string);
+    virtual void display();
+};
+Engine::Engine()
+{
+    eng_no=1001;
+    name="the";
+}
+Engine::Engine(int a)
+{
+    name=a;
+}
+Engine::Engine(int a,string b)
+{
+    eng_no=a;
+    name=b;
+}
+void Engine::display()
+{
+    cout<<eng_no<<endl;
+    cout<<name<<endl;
+}
+/*int main()
+{
+    Engine e1;
+    e1.display();
+    Engine e2(1001,"yhery");;
+    e2.display();
+    return 0;
+
+}*/
+class Train:public Engine
+{
+    int trainno;
+    string train_name;
+    public:
+    Train();
+    Train(int,string,int,string);
+    void display();
+};
+Train::Train()
+{
+    trainno=45656;
+    train_name="express";
+}
+Train::Train(int a,string b,int y,string name3):Engine(a,b)
+{
+    trainno=y;
+    train_name=name3;
+}
+void Train::display()
+{
+    Engine::display();
+    cout<<trainno<<endl;
+    cout<<train_name<<endl;
+}
+int main()
+{
+    Train t1;
+    t1.display();
+    Engine *epr;
+    Train tpr;
+    epr=&tpr;
+    epr->display();
+    Train tr(1005,"tdd",1004,"superfast");
+    tr.display();
+    return 0;
+}
